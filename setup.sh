@@ -34,8 +34,8 @@ uv python install 3.10
 # Install common dependencies first
 echo "📦 Installing core dependencies..."
 
-# Core ML/scientific computing stack
-uv add "numpy>=1.22.4"
+# Core ML/scientific computing stack - pin numpy to 1.x for compatibility
+uv add "numpy>=1.22.4,<2.0"
 uv add "torch>=2.0.1"
 uv add "matplotlib>=3.7.0"
 uv add "tqdm>=4.65.0"
@@ -55,10 +55,10 @@ echo "🧠 Installing levanterForAnticipation dependencies..."
 # Install transformers with a compatible version that works for both
 uv add "transformers>=4.22.0,<5.0.0"
 
-# JAX ecosystem (user needs to install JAX separately based on their system)
-echo "⚠️  Note: You'll need to install JAX separately based on your system:"
-echo "   For CPU: uv add 'jax[cpu]'"
-echo "   For CUDA: uv add 'jax[cuda12]' (or cuda11 for older CUDA)"
+# JAX ecosystem - pin to compatible versions
+echo "📦 Installing JAX with compatible versions..."
+uv add "jax>=0.4.10,<0.5.0"
+uv add "jaxlib>=0.4.10,<0.5.0"
 
 # Other levanter dependencies
 uv add "equinox>=0.10.7"
@@ -91,19 +91,21 @@ uv add "haliax @ git+https://github.com/stanford-crfm/haliax.git"
 echo "🔧 Installing levanterForAnticipation package..."
 uv add --editable "./levanterForAnticipation"
 
+# Fix JAX compatibility issue if it exists
+echo "🔧 Checking for JAX compatibility issues..."
+if ! uv run python -c "import levanter" 2>/dev/null; then
+    echo "⚠️  Fixing JAX TpuCluster import compatibility..."
+    sed -i.bak 's/from jax\._src\.clusters import SlurmCluster, TpuCluster/from jax._src.clusters import SlurmCluster, GceTpuCluster as TpuCluster/' "./levanterForAnticipation/src/levanter/distributed.py"
+fi
+
 echo "✅ Environment setup complete!"
 echo ""
 echo "🎯 Next steps:"
-echo "1. Install JAX for your system:"
-echo "   uv add 'jax[cpu]'     # For CPU"
-echo "   uv add 'jax[cuda12]'  # For CUDA 12"
-echo "   uv add 'jax[cuda11]'  # For CUDA 11"
-echo ""
-echo "2. Activate the environment:"
+echo "1. Activate the environment:"
 echo "   source .venv/bin/activate"
 echo ""
-echo "3. Or run commands with:"
+echo "2. Or run commands with:"
 echo "   uv run python your_script.py"
 echo ""
-echo "🔍 To check the installation:"
+echo "🔍 To verify the installation:"
 echo "   uv run python -c \"import anticipation; import levanter; print('✅ All packages imported successfully!')\"" 
