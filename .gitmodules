@@ -1,0 +1,6 @@
+[submodule "anticipation-lancelot"]
+	path = anticipation-lancelot
+	url = https://github.com/lancelotblanchard/anticipation.git
+[submodule "levanterForAnticipation"]
+	path = levanterForAnticipation
+	url = https://github.com/lancelotblanchard/levanterForAnticipation.git

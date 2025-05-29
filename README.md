@@ -2,7 +2,7 @@
 
 1. Clone this repository:
 ```bash
-git clone <amt repository-url>
+git clone --recurse-submodules <amt repository-url>
 cd amt
 ```
 
@@ -31,11 +31,10 @@ source .venv/bin/activate
 uv run python your_script.py
 ```
 
-## Project Structure
+## Submodules
 
-- `levanterForAnticipation/`: Modified Levanter for anticipation experiments
-- `anticipation-lancelot/`: Anticipation-related code and models
-- `setup.sh`: Automated setup script using uv
+- `levanterForAnticipation/`: Levanter modified by Lancelot for Anticipation use:
+- `anticipation-lancelot/`: Lancelot's fork of Anticipation by John Thickstun
 
 ## Development
 

@@ -1,0 +1,46 @@
+[project]
+name = "amt-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anticipation",
+    "braceexpand>=0.1.7",
+    "dataclasses-json>=0.6.7",
+    "datasets==2.11.0",
+    "draccus>=0.6",
+    "equinox>=0.10.7",
+    "fsspec<2023.10.0",
+    "gcsfs<2023.10.0",
+    "haliax",
+    "humanfriendly==10.0",
+    "jax>=0.4.10,<0.5.0",
+    "jaxlib>=0.4.10,<0.5.0",
+    "jaxtyping>=0.2.20",
+    "jmp>=0.0.3",
+    "levanter",
+    "matplotlib>=3.7.0",
+    "midi2audio==0.1.1",
+    "mido==1.2.10",
+    "numpy>=1.22.4,<2.0",
+    "optax>=0.2.4",
+    "pyarrow>=11.0.0",
+    "pydantic<2",
+    "pytimeparse>=1.1.8",
+    "ray[default]>=2.46.0",
+    "rich>=13",
+    "safetensors[numpy]>=0.5.3",
+    "tblib>=1.7.0,<2.0.0",
+    "tensorstore==0.1.45",
+    "torch>=2.0.1",
+    "tqdm>=4.65.0",
+    "transformers>=4.22.0,<5.0.0",
+    "wandb>=0.19.11",
+    "zstandard>=0.20.0",
+]
+
+[tool.uv.sources]
+anticipation = { path = "anticipation-lancelot", editable = true }
+haliax = { git = "https://github.com/stanford-crfm/haliax.git" }
+levanter = { path = "levanterForAnticipation", editable = true }
