@@ -1,0 +1,17 @@
+# Cursor workspace rules for AMT Project
+
+# Python settings
+python_version: "3.10"
+python_path: "venv/bin/python"
+
+# Code formatting
+format_on_save: true
+indent_size: 4
+line_length: 88
+
+# Search settings
+search_exclude_patterns:
+  - "**/__pycache__"
+  - "**/.git"
+  - "**/venv"
+  - "**/data" 
