@@ -6,18 +6,18 @@
 
 1. Clone this repository:
 ```bash
-git clone --recurse-submodules <amt repository-url>
+git clone --recurse-submodules https://github.com/josmithiii/amt.git
 cd amt
 ```
 
-2. Set up a uv environment for the `levanterForAnticipation` and `anticipation-lancelot` repositories:
+2. Set up a uv environment for the `levanterForAnticipation` and `anticipation-lancelot` submodule repositories:
 ```bash
 bash setup.sh
 ```
 
 This will:
 - Create a Python 3.10 virtual environment using uv
-- Install both packages in editable mode with compatible dependencies
+- Install both repos in editable mode with compatible dependencies
 - Configure the environment for VS Code/Pylance compatibility
 - Automatically fix any JAX compatibility issues
 
@@ -37,8 +37,13 @@ uv run python your_script.py
 
 ## Submodules
 
-- `levanterForAnticipation/`: Levanter modified by Lancelot for Anticipation use:
-- `anticipation-lancelot/`: Lancelot's fork of Anticipation by John Thickstun
+1. Siqi's forks:
+  - `levanter-siqi/`: Levanter modified by Siqi for Anticipation use:
+  - `anticipation-siqi/`: Siqi's fork of Anticipation by John Thickstun
+2. Lancelot's forks:
+  - `levanterForAnticipation/`: Levanter modified by Lancelot for Anticipation use:
+  - `anticipation-lancelot/`: Lancelot's fork of Anticipation by John Thickstun
+- For switching submodule sets, see https://chatgpt.com/share/684a6fcc-1a64-800f-8927-7c052fa36db3
 
 ## Development
 
