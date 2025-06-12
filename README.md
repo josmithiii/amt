@@ -2,11 +2,7 @@
 
 **Reference:** [Anticipatory Music Transformer](https://arxiv.org/abs/2306.08620) &nbsp; ([Blog](https://crfm.stanford.edu/2023/06/16/anticipatory-music-transformer.html))
 
-## Lakh MIDI Data Training with Levanter
-
-This README outlines how to preprocess the lakh midi data and train a transformer model on it using levanter.
-
-## Setup Steps
+## Setup Steps for Preprocessing the Lakh MIDI Dataset and Training a Transformer using Levanter
 
 ### 1. Setup Anticipation Environment
 Set up anticipation in a new conda environment under the anticipation repo. The anticipation repo contains code to preprocess data and do inference on a saved model checkpoint. It does not support direct training of the AMT model.
