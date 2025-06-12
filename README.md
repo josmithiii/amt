@@ -1,4 +1,8 @@
-# Lakh MIDI Data Training with Levanter
+# Workspace for Levanter and Anticipation Repos
+
+**Reference:** [Anticipatory Music Transformer](https://arxiv.org/abs/2306.08620) &nbsp; ([Blog](https://crfm.stanford.edu/2023/06/16/anticipatory-music-transformer.html))
+
+## Lakh MIDI Data Training with Levanter
 
 This README outlines how to preprocess the lakh midi data and train a transformer model on it using levanter.
 
